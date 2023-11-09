@@ -1,0 +1,18 @@
+data_nilai = [95, 35, 50, 65, 70, 85, 25, 100, 80, 90, 45, 40, 35, 20, 75, 50, 40, 60, 80, 75]
+
+mean_nilai = sum(data_nilai) / len(data_nilai)
+
+sorted_nilai = sorted(data_nilai)
+mid_nilai = len(data_nilai) // 2
+if len(data_nilai) % 2 == 0:
+    median_nilai = (sorted_nilai[mid_nilai - 1] + sorted_nilai[mid_nilai]) / 2
+else:
+    median_nilai = sorted_nilai[mid_nilai]
+
+from collections import Counter
+counter_nilai = Counter(data_nilai)
+modus_nilai = [k for k, v in counter_nilai.items() if v == max(counter_nilai.values())]
+
+print(f"Mean: {mean_nilai}")
+print(f"Median: {median_nilai}")
+print(f"Modus: {modus_nilai}")
