@@ -1,0 +1,18 @@
+data = [100.5, 99.7, 101, 101.3, 99.9, 98.9, 165, 102.2, 98.7, 102.9, 100]
+
+mean = sum(data) / len(data)
+
+sorted_data = sorted(data)
+mid = len(data) // 2
+if len(data) % 2 == 0:
+    median = (sorted_data[mid - 1] + sorted_data[mid]) / 2
+else:
+    median = sorted_data[mid]
+
+from collections import Counter
+counter = Counter(data)
+modus = [k for k, v in counter.items() if v == max(counter.values())]
+
+print(f"Mean: {mean}")
+print(f"Median: {median}")
+print(f"Modus: {modus}")
